@@ -6,7 +6,8 @@ import {PersonSearchComponent} from "./person-search/person-search.component";
 
 const routes: Routes = [
   { path: 'list', component: PersonListComponent},
-  { path: 'search', component: PersonSearchComponent}
+  { path: 'search', component: PersonSearchComponent},
+  { path: '', redirectTo: '/', pathMatch: 'full' }
 ];
 
 @NgModule({
