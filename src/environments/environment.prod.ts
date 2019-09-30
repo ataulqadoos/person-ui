@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  personApiUrl: 'https://some-cloud-domain:5000/'
+  personApiUrl: 'http://person-service-demo-aq2-dev.us-west-2.elasticbeanstalk.com'
 };
