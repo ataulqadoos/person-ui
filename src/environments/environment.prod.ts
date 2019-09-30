@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  personApiUrl: 'https://some-cloud-domain:5000/'
+  personApiUrl: 'https://agile-lake-06238.herokuapp.com'
 };
