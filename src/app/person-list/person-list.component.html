@@ -1,9 +1,6 @@
 <h2>Person List</h2>
-<ul class="persons">
+<ul class="persons" *ngFor="let person of personList ">
     <li>
-        Ataul
-    </li>
-    <li>
-        William
+        {{ person.firstName }} {{ person.lastName}}
     </li>
 </ul>

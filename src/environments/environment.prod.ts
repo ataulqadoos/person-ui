@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  personApiUrl: 'https://some-cloud-domain:5000/'
 };

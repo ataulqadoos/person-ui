@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {PersonService} from "../service/person.service";
+import {Subscription} from "rxjs";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-person-search',
@@ -7,9 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonSearchComponent implements OnInit {
 
-  constructor() { }
+  personList: any[] = [];
+  nameSearchForm: FormGroup;
+
+  personServiceSubscription: Subscription;
+
+  constructor(
+      private personService: PersonService,
+      private formBuilder: FormBuilder) {
+    this.nameSearchForm = this.formBuilder.group({
+      name: ['', Validators.required],
+    });
+  }
 
   ngOnInit() {
+  }
+
+  onSubmit(data) {
+    this.personList = [];
+    const name = data.name;
+
+    this.personService.findByName('firstname', name).toPromise().then(data => {
+        this.personList.push(data);
+    });
+
+    this.personService.findByName('lastname', name).toPromise().then(data => {
+      this.personList.push(data);
+    });
   }
 
 }

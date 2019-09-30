@@ -8,6 +8,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { PersonListComponent } from './person-list/person-list.component';
 import { PersonSearchComponent } from './person-search/person-search.component';
 import {PersonService} from "./service/person.service";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {PersonService} from "./service/person.service";
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [PersonService],
   bootstrap: [AppComponent]

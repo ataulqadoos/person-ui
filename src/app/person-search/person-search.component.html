@@ -1,1 +1,15 @@
-<p>person-search works!</p>
+<h2>Search person by first/last name</h2>
+<form [formGroup]="nameSearchForm" (ngSubmit)="onSubmit(nameSearchForm.value)">
+    <div>
+        <label>Enter First or Last Name:</label>
+        <input id="name" type="text" formControlName="name" />
+    </div>
+    <button class="button" type="submit">Search</button>
+</form>
+
+<h2>Search Result</h2>
+<ul class="persons" *ngFor="let person of personList ">
+    <li>
+        {{ person.firstName }} {{ person.lastName}}
+    </li>
+</ul>
